@@ -220,15 +220,15 @@ const DATA = {
   day: {
     basis:'Basis: single day — 12-Oct-2026 (shifts A–D)',
     kpiTitle:'CURRENT SCENARIO — OEE (12-OCT-2026)',
-    kpi:{A:65.6,P:62.1,Q:100.0,OEE:40.8}, targets:{A:90,P:86,Q:97,OEE:75},
+    kpi:{A:65.6,P:99.9,Q:100.0,OEE:65.6}, targets:{A:90,P:86,Q:97,OEE:75},
     timeTitle:'Where is time going? — 12-Oct',
     time:{planned:1440, avail:945, down:495, availPct:65.6, downPct:34.4,
       note:'495 min unplanned (NPT); no planned downtime booked. Coarse-bran storage bin full / delivery slow is the main cause.'},
     millsTitle:'OEE by product — 12-Oct',
     mills:[
-      {n:'Atta+Suji+B.Atta',v:40.8,A:65.6,P:62.1,Q:100.0,crush:393.54}],
+      {n:'Atta+Suji+B.Atta',v:65.6,A:65.6,P:99.9,Q:100.0,crush:393.54}],
     factorsTitle:'Find the bottleneck — 12-Oct',
-    factors:[{n:'Availability',v:65.6,t:90},{n:'Performance',v:62.1,t:86},{n:'Quality',v:100.0,t:97}],
+    factors:[{n:'Availability',v:65.6,t:90},{n:'Performance',v:99.9,t:86},{n:'Quality',v:100.0,t:97}],
     lossTitle:'Top downtime — 12-Oct (min)',
     losses:[{n:'W01- Warehouse / coarse-bran bin full',v:495}],
     lossNote:'Total unplanned NPT 495 min — 100% warehouse (coarse-bran bin full / delivery slow).',
@@ -242,11 +242,11 @@ const DATA = {
     ],
     shiftTitle:'Shift OEE — 12-Oct',
     shifts:[
-      {n:'Shift A',v:47.2,A:76.3,P:61.9,Q:100.0,Out:94.37},
-      {n:'Shift B',v:12.8,A:20.6,P:62.0,Q:100.0,Out:25.58},
-      {n:'Shift C',v:61.7,A:100.0,P:61.7,Q:100.0,Out:92.61},
-      {n:'Shift D',v:64.0,A:100.0,P:64.0,Q:100.0,Out:32}],
-    quant:'495 min NPT on 12-Oct (warehouse / coarse-bran bin full). Best shift D (64.0%); Availability 65.6% and Performance 62.1% both constrain.',
+      {n:'Shift A',v:76.3,A:76.3,P:100.0,Q:100.0,Out:152.53},
+      {n:'Shift B',v:20.5,A:20.6,P:99.6,Q:100.0,Out:41.1},
+      {n:'Shift C',v:99.9,A:100.0,P:99.9,Q:100.0,Out:149.91},
+      {n:'Shift D',v:100.0,A:100.0,P:100.0,Q:100.0,Out:50}],
+    quant:'495 min NPT on 12-Oct (warehouse / coarse-bran bin full). Best shift D (100%); Availability 65.6% is the constraint (Performance 99.9% on crushing-input basis).',
     opp:{ rows:[{mill:'Milling',min:495,cyc:2.4,mt:206}],
       totalMin:495, totalMT:206, plannedMin:0, plannedMT:0,
       note:'Opportunity loss = NPT min ÷ ideal cycle time (2.4 min/MT) → <b>~206 MT</b> unplanned on 12-Oct.' }
@@ -254,18 +254,18 @@ const DATA = {
   mtd: {
     basis:'Basis: 01–12 Oct 2026 month-to-date (shifts A–D)',
     kpiTitle:'CURRENT SCENARIO — OEE (OCT 2026 MTD)',
-    kpi:{A:75.0,P:64.0,Q:100.0,OEE:48.0}, targets:{A:90,P:86,Q:97,OEE:75},
+    kpi:{A:75.0,P:100.1,Q:100.0,OEE:75.0}, targets:{A:90,P:86,Q:97,OEE:75},
     timeTitle:'Where is time going? — Oct MTD',
     time:{planned:12750, avail:9559, down:3191, availPct:75.0, downPct:25.0,
       note:'3,191 min unplanned (NPT); 4,530 min planned downtime excluded from availability.'},
     millsTitle:'OEE by product — Oct MTD',
     mills:[
-      {n:'Atta',v:77.6,A:100.0,P:77.6,Q:100.0,crush:54.41},
-      {n:'Maida',v:50.4,A:72.3,P:69.8,Q:100.0,crush:816.71},
-      {n:'Atta+Suji+B.Atta',v:50.3,A:80.7,P:62.3,Q:100.0,crush:2252.72},
-      {n:'Atta+Suji',v:39.9,A:64.2,P:62.1,Q:100.0,crush:861.01}],
+      {n:'Atta',v:100.5,A:100.0,P:100.5,Q:100.0,crush:54.41},
+      {n:'Atta+Suji+B.Atta',v:80.7,A:80.7,P:100.0,Q:100.0,crush:2252.72},
+      {n:'Maida',v:72.4,A:72.3,P:100.1,Q:100.0,crush:816.71},
+      {n:'Atta+Suji',v:64.3,A:64.2,P:100.1,Q:100.0,crush:861.01}],
     factorsTitle:'Find the bottleneck — Oct MTD',
-    factors:[{n:'Availability',v:75.0,t:90},{n:'Performance',v:64.0,t:86},{n:'Quality',v:100.0,t:97}],
+    factors:[{n:'Availability',v:75.0,t:90},{n:'Performance',v:100.1,t:86},{n:'Quality',v:100.0,t:97}],
     lossTitle:'Top downtime — Oct MTD (min)',
     losses:[{n:'P01- Schedule mill maintenance',v:4530},{n:'U01- REB / 11kV power failure',v:1784},{n:'M01- Bran finisher beater strips',v:706},{n:'W01- Coarse-bran bin full',v:495},{n:'M01- Pneumatic line sight glass',v:60},{n:'I01- Flour line change',v:50}],
     lossNote:'Total 7,721 min — <b>4,530 min planned</b> + 3,191 min unplanned (NPT).',
@@ -284,11 +284,11 @@ const DATA = {
     ],
     shiftTitle:'Shift OEE — Oct MTD',
     shifts:[
-      {n:'Shift A',v:44.8,A:69.1,P:64.9,Q:100.0,Out:768.01},
-      {n:'Shift B',v:43.3,A:67.9,P:63.7,Q:100.0,Out:778.55},
-      {n:'Shift C',v:56.6,A:89.5,P:63.2,Q:100.0,Out:764.08},
-      {n:'Shift D',v:53.1,A:81.9,P:64.8,Q:100.0,Out:238.81}],
-    quant:'3,191 min unplanned NPT + 4,530 min planned maintenance (excluded from availability). Performance 64.0% is the constraint.',
+      {n:'Shift A',v:69.2,A:69.1,P:100.1,Q:100.0,Out:1184.63},
+      {n:'Shift B',v:67.9,A:67.9,P:100.0,Q:100.0,Out:1222.43},
+      {n:'Shift C',v:89.5,A:89.5,P:100.0,Q:100.0,Out:1208.74},
+      {n:'Shift D',v:82.0,A:81.9,P:100.1,Q:100.0,Out:369.05}],
+    quant:'3,191 min unplanned NPT + 4,530 min planned maintenance (excluded from availability). Availability 75.0% is the constraint (Performance 100.1% on crushing-input basis).',
     opp:{ rows:[{mill:'Milling',min:3191,cyc:2.4,mt:1330}],
       totalMin:3191, totalMT:1330, plannedMin:4530, plannedMT:1888,
       note:'Opportunity loss = NPT min ÷ ideal cycle time (2.4 min/MT) → <b>~1,330 MT</b> unplanned this month, plus <b>~1,888 MT</b> from planned maintenance.' }
@@ -357,7 +357,7 @@ function shiftBoard(arr){
       <span class="track" style="position:relative;margin:4px 0 3px;height:12px">
         <i style="width:${w}%;background:${c}"></i>
         <span style="position:absolute;left:${TARGET}%;top:-3px;bottom:-3px;width:2px;background:#333;opacity:.55"></span></span>
-      <div class="muted" style="font-size:10.5px">A ${s.A}% · P ${s.P}% · Q ${s.Q}% · Out ${s.Out.toLocaleString()} MT</div>
+      <div class="muted" style="font-size:10.5px">A ${s.A}% · P ${s.P}% · Q ${s.Q}% · Crushing input ${s.Out.toLocaleString()} MT</div>
     </div>`;}).join('') + `<div class="muted" style="font-size:10.5px;margin-top:8px;border-top:1px solid #e2e8e7;padding-top:6px">▏black line = 75% OEE target · best shift: <b style="color:#2e7d32">${best.n}</b> (${best.v.toFixed(1)}%)</div>`;
 }
 function oppCard(o){
