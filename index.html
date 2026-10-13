@@ -132,7 +132,7 @@
   <div class="grid g3" style="margin-top:12px">
     <div class="card">
       <h3 id="timeTitle">Where is time going? — 11-Oct</h3>
-      <div class="donut" id="donut"><div class="hole"><b id="donutC">2,880</b><span class="muted" style="font-size:10px">planned min</span></div></div>
+      <div class="donut" id="donut"><div class="hole"><b id="donutC">1,440</b><span class="muted" style="font-size:10px">planned prod. min</span></div></div>
       <div class="legend" id="donutL"></div>
       <p class="muted" style="margin:10px 0 0;font-size:11px" id="timeNote"></p>
     </div>
@@ -254,18 +254,18 @@ const DATA = {
   mtd: {
     basis:'Basis: 01–12 Oct 2026 month-to-date (shifts A–D)',
     kpiTitle:'CURRENT SCENARIO — OEE (OCT 2026 MTD)',
-    kpi:{A:55.3,P:64.0,Q:100.0,OEE:35.4}, targets:{A:90,P:86,Q:97,OEE:75},
+    kpi:{A:75.0,P:64.0,Q:100.0,OEE:48.0}, targets:{A:90,P:86,Q:97,OEE:75},
     timeTitle:'Where is time going? — Oct MTD',
-    time:{planned:17280, avail:9559, down:7721, availPct:55.3, downPct:44.7,
-      note:'4,530 min planned maintenance + 3,191 min unplanned (NPT). Availability is the #1 loss.'},
+    time:{planned:12750, avail:9559, down:3191, availPct:75.0, downPct:25.0,
+      note:'3,191 min unplanned (NPT); 4,530 min planned downtime excluded from availability.'},
     millsTitle:'OEE by product — Oct MTD',
     mills:[
+      {n:'Atta',v:77.6,A:100.0,P:77.6,Q:100.0,out:42.06,target:54},
+      {n:'Maida',v:50.4,A:72.3,P:69.8,Q:100.0,out:569.37,target:1129},
       {n:'Atta+Suji+B.Atta',v:50.3,A:80.7,P:62.3,Q:100.0,out:1403.85,target:2790},
-      {n:'Maida',v:44.8,A:64.3,P:69.8,Q:100.0,out:569.37,target:1129},
-      {n:'Atta+Suji',v:39.9,A:64.2,P:62.1,Q:100.0,out:534.18,target:1340},
-      {n:'Atta',v:2.3,A:3.0,P:77.6,Q:100.0,out:42.06,target:54}],
+      {n:'Atta+Suji',v:39.9,A:64.2,P:62.1,Q:100.0,out:534.18,target:1340}],
     factorsTitle:'Find the bottleneck — Oct MTD',
-    factors:[{n:'Availability',v:55.3,t:90},{n:'Performance',v:64.0,t:86},{n:'Quality',v:100.0,t:97}],
+    factors:[{n:'Availability',v:75.0,t:90},{n:'Performance',v:64.0,t:86},{n:'Quality',v:100.0,t:97}],
     lossTitle:'Top downtime — Oct MTD (min)',
     losses:[{n:'P01- Schedule mill maintenance',v:4530},{n:'U01- REB / 11kV power failure',v:1784},{n:'M01- Bran finisher beater strips',v:706},{n:'W01- Coarse-bran bin full',v:495},{n:'M01- Pneumatic line sight glass',v:60},{n:'I01- Flour line change',v:50}],
     lossNote:'Total 7,721 min — <b>4,530 min planned</b> + 3,191 min unplanned (NPT).',
@@ -284,11 +284,11 @@ const DATA = {
     ],
     shiftTitle:'Shift OEE — Oct MTD',
     shifts:[
-      {n:'Shift A',v:32.0,A:49.3,P:64.9,Q:100.0,Out:768.01},
-      {n:'Shift B',v:32.4,A:50.9,P:63.7,Q:100.0,Out:778.55},
-      {n:'Shift C',v:42.4,A:67.1,P:63.2,Q:100.0,Out:764.08},
-      {n:'Shift D',v:39.8,A:61.5,P:64.8,Q:100.0,Out:238.81}],
-    quant:'3,191 min unplanned NPT + 4,530 min planned maintenance. Availability 55.3% and Performance 64.0% both constrain OEE 35.4%.',
+      {n:'Shift A',v:44.8,A:69.1,P:64.9,Q:100.0,Out:768.01},
+      {n:'Shift B',v:43.3,A:67.9,P:63.7,Q:100.0,Out:778.55},
+      {n:'Shift C',v:56.6,A:89.5,P:63.2,Q:100.0,Out:764.08},
+      {n:'Shift D',v:53.1,A:81.9,P:64.8,Q:100.0,Out:238.81}],
+    quant:'3,191 min unplanned NPT + 4,530 min planned maintenance (excluded from availability). Performance 64.0% is the constraint.',
     opp:{ rows:[{mill:'Milling',min:3191,cyc:2.4,mt:1330}],
       totalMin:3191, totalMT:1330, plannedMin:4530, plannedMT:1888,
       note:'Opportunity loss = NPT min ÷ ideal cycle time (2.4 min/MT) → <b>~1,330 MT</b> unplanned this month, plus <b>~1,888 MT</b> from planned maintenance.' }
